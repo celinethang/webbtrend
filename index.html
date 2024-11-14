@@ -22,6 +22,27 @@
             padding: 50px;
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .container::before, .container::after {
+            content: "🌸";
+            font-size: 2em;
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+        }
+        .container::before {
+            top: -20px;
+            left: -20px;
+            animation-delay: 0.2s;
+        }
+        .container::after {
+            bottom: -20px;
+            right: -20px;
+            animation-delay: 0.8s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
         h1 {
             font-size: 3em;
@@ -44,15 +65,25 @@
             text-decoration: none;
             border-radius: 8px;
             transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(171, 71, 188, 0.4);
         }
         a:hover {
             background-color: #8e24aa;
+        }
+        .heart {
+            font-size: 1.5em;
+            color: #ff6b81;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>셀린의 아카이브</h1>
+        <h1>셀린의 아카이브 <span class="heart">💖</span></h1>
         <p>이곳은 셀린의 기억과 소중한 순간들이 담긴 아카이브입니다. 소중한 이야기와 영감이 가득한 공간으로 초대합니다.</p>
         <a href="#">아카이브 탐험하기</a>
     </div>
